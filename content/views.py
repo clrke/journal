@@ -4,13 +4,13 @@ from rest_framework.permissions import AllowAny
 from .models import JournalEntry
 
 
-class ContentList(ListCreateAPIView):
+class JournalEntryListAPIView(ListCreateAPIView):
     permission_classes = (AllowAny,)
     serializer_class = JournalEntrySerializer
     queryset = JournalEntry.objects.all()
 
 
-class ContentDetail(RetrieveUpdateAPIView):
+class JournalEntryDetailAPIViewContentDetail(RetrieveUpdateAPIView):
     serializer_class = JournalEntrySerializer
     permission_classes = (AllowAny,)
     queryset = JournalEntry.objects.all()
