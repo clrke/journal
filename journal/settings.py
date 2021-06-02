@@ -144,10 +144,10 @@ if not DEBUG:
         traces_sample_rate=1.0
     )
 
-    STATICFILES_STORAGE = os.environ.get(
-        'STATICFILES_STORAGE',
-        'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
-    )
+STATICFILES_STORAGE = os.environ.get(
+    'STATICFILES_STORAGE',
+    'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+)
 
 if STATICFILES_STORAGE == 'storages.backends.s3boto3.S3Boto3Storage':
     DEFAULT_FILE_STORAGE = STATICFILES_STORAGE
